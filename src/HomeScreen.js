@@ -18,7 +18,7 @@ function HomeScreen() {
       />
       <Row title="أكثر مشاهدات" fetchUrl={requests.fetchTrending} arabic />
       <Row title="سهرة الليلة" fetchUrl={requests.fetchTopRated} arabic/>
-      <Row title="أفلام المغامرة" fetchUrl={requests.fetchActionMovies} arabic/>
+      <Row title="المسلسلات" fetchUrl={requests.fetchActionMovies} arabic/>
       <Row title="أفلام الكوميديا" fetchUrl={requests.fetchComedyMovies} arabic/>
       <Row title="أفلام الرعب" fetchUrl={requests.fetchHorrorMovies} arabic/>
       <Row title="أفلام الرومنسية" fetchUrl={requests.fetchRomanceMovies} arabic/>

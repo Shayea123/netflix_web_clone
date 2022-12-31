@@ -40,6 +40,9 @@ function Row({ title, fetchUrl, isLargeRow = false, arabic = false }) {
                   }`}
                   alt={movie.name}
                 />
+                <div className="play-btn">
+                <i className="fas fa-play"></i>
+                </div>
                 <div className="img_shadow" />
                 <div className="row__name_div">
                   <h2 className="row__h2_name">
