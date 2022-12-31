@@ -17,7 +17,11 @@ function Row({ title, fetchUrl, isLargeRow = false, arabic = false }) {
     fetchData();
   }, [fetchUrl]);
 
-  console.log(movies);
+  function truncate(string, n) {
+    return string?.length > n ? string.substr(0, n - 1) + "..." : string;
+  }
+
+  // console.log(movies);
 
   return (
     <div className="row">
@@ -27,6 +31,7 @@ function Row({ title, fetchUrl, isLargeRow = false, arabic = false }) {
           (movie) =>
             ((isLargeRow && movie.poster_path) ||
               (!isLargeRow && movie.backdrop_path)) && (
+              <div className="row__card_poster" key={movie.id}>
                 <img
                   className={`row__poster ${isLargeRow && "row__posterLarge"} `}
                   key={movie.id}
@@ -35,6 +40,21 @@ function Row({ title, fetchUrl, isLargeRow = false, arabic = false }) {
                   }`}
                   alt={movie.name}
                 />
+                <div className="img_shadow" />
+                <div className="row__name_div">
+                  <h2 className="row__h2_name">
+                    {truncate(
+                      movie?.title || movie?.name || movie?.original_name,
+                      20
+                    )}
+                  </h2>
+                </div>
+                <div className="row__rate_div">
+                  <h3 className="row__h3_rate">
+                    {movie.vote_average.toFixed(1)}
+                  </h3>
+                </div>
+              </div>
             )
         )}
       </div>
