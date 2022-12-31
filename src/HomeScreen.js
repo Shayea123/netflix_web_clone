@@ -14,7 +14,6 @@ function HomeScreen() {
       <Row
         title="NETFLIX ORIGINALS"
         fetchUrl={requests.fetchNetflixOriginals}
-        isLargeRow
       />
       <Row title="أكثر مشاهدات" fetchUrl={requests.fetchTrending} arabic />
       <Row title="سهرة الليلة" fetchUrl={requests.fetchTopRated} arabic/>
